@@ -17,6 +17,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {
+      "offtrail": ["./offtrail"],
       "data": ["./data"],
       "compositions": ["./ui/compositions"],
       "hooks": ["./ui/hooks"],

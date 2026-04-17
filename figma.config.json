@@ -1,9 +1,10 @@
 {
   "codeConnect": {
-    "include": ["src/ui/**/*", "src/figma/**/*"],
+    "include": ["src/ui/**/*", "src/figma/**/*", "src/offtrail/**/*"],
     "exclude": ["src/figma/icons/*"],
     "parser": "react",
     "importPaths": {
+      "offtrail/**/*": "offtrail",
       "ui/compositions/**/*": "compositions",
       "ui/icons/*": "icons",
       "ui/images/*": "images",
@@ -11,6 +12,7 @@
       "ui/primitives/**/*": "primitives"
     },
     "paths": {
+      "offtrail": ["src/offtrail"],
       "compositions": ["src/ui/compositions"],
       "hooks": ["src/ui/hooks"],
       "icons": ["src/ui/icons"],
@@ -117,7 +119,9 @@
       "<FIGMA_TEXT_TEXT_TITLE_HERO>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi?node-id=2087-8491",
       "<FIGMA_TEXT_TEXT_TITLE_PAGE>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi?node-id=2087-8490",
       "<FIGMA_TEXT_TEXT>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi?node-id=2087-8487",
-      "<FIGMA_TOOLTIP_TOOLTIP>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi?node-id=315-32700"
+      "<FIGMA_TOOLTIP_TOOLTIP>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi?node-id=315-32700",
+      "<FIGMA_OFFTRAIL_MAKE_EXAMPLE>": "https://www.figma.com/make/SI4i0JJIHGVi5SQF1sNaRI/Offtrail-Make-Example",
+      "<FIGMA_OFFTRAIL_APP_FRAME>": "https://www.figma.com/design/5F13OVOM43ifAHo0LAz6dk/Offtrail--Copy-?node-id=598-113"
     }
   }
 }

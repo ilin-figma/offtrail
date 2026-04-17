@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      offtrail: path.resolve(__dirname, "./src/offtrail"),
       compositions: path.resolve(__dirname, "./src/ui/compositions"),
       data: path.resolve(__dirname, "./src/data"),
       hooks: path.resolve(__dirname, "./src/ui/hooks"),

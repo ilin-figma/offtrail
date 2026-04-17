@@ -1,0 +1,734 @@
+/*
+ * Offtrail Photo Filter — tokens from Figma (Production MCP get_design_context)
+ * File: 5F13OVOM43ifAHo0LAz6dk · nodes 598:113, 598:116 (sidebar), 598:139–140, 598:199, 598:281, 598:316 (Clear)
+ * https://www.figma.com/design/5F13OVOM43ifAHo0LAz6dk/Offtrail--Copy-?node-id=598-116
+ */
+.offtrail-photo-filter {
+  --off-bg: #10071b;
+  --off-canvas: #10071b;
+  --off-canvas-border: rgba(255, 255, 255, 0.2);
+  --off-card-border: rgba(255, 255, 255, 0.4);
+  --off-text: #ffffff;
+  --off-muted: rgba(255, 255, 255, 0.7);
+  --off-subtle: rgba(255, 255, 255, 0.4);
+  --off-orange: #ff932e;
+  --off-orange-text: #2c3039;
+  --off-preset-inactive-bg: rgba(255, 255, 255, 0.1);
+  --off-sidebar-width: 285px;
+  --off-preset-size: 87px;
+  --off-preset-gap: 12px;
+  --off-outer-pad: 24px;
+  --off-radius: 8px;
+  --off-ui-font: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --off-display-font: "Workbench", ui-sans-serif, system-ui, sans-serif;
+  --off-chevron-url: url("https://www.figma.com/api/mcp/asset/412efe00-5eb9-4455-a519-83dc86d1ea02");
+
+  background: var(--off-bg);
+  box-sizing: border-box;
+  color: var(--off-text);
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  font-family: var(--off-ui-font);
+  gap: var(--off-outer-pad);
+  min-height: 100vh;
+  padding: var(--off-outer-pad);
+  width: 100%;
+}
+
+.offtrail-photo-filter *,
+.offtrail-photo-filter *::before,
+.offtrail-photo-filter *::after {
+  box-sizing: border-box;
+}
+
+.offtrail-photo-filter .slider-field {
+  --slider-thumb-background-color: var(--off-orange);
+  --slider-thumb-border-color: var(--off-orange);
+  --slider-track-background-color: rgba(255, 255, 255, 0.12);
+  color: var(--off-text);
+  font-family: var(--off-ui-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+/* SDS fields default label tokens to light-surface text — wrong on this dark rail */
+.offtrail-photo-filter .field {
+  --field-description-color: var(--off-subtle);
+  --field-label-color: var(--off-muted);
+  --field-row-gap: 4px;
+}
+
+.offtrail-photo-filter .slider-output {
+  color: var(--off-text);
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+
+.offtrail-photo-filter .accordion-item {
+  background: #10071b;
+  border: 1px solid var(--off-card-border);
+  border-radius: var(--off-radius);
+  box-shadow: none;
+  color: var(--off-text);
+  overflow: hidden;
+}
+
+.offtrail-photo-filter .accordion-item:not([data-expanded]) {
+  box-sizing: border-box;
+  height: 52px;
+}
+
+.offtrail-photo-filter .accordion-item[data-expanded] {
+  height: auto;
+}
+
+.offtrail-photo-filter .accordion-item:has(.accordion-item-title > button[data-hovered]) {
+  background: #140a1f;
+}
+
+.offtrail-photo-filter .accordion-item-title {
+  margin: 0;
+  width: 100%;
+}
+
+.offtrail-photo-filter .accordion-item:not([data-expanded]) .accordion-item-title {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+.offtrail-photo-filter .accordion-item[data-expanded] .accordion-item-title {
+  flex-shrink: 0;
+  height: auto;
+}
+
+.offtrail-photo-filter .accordion-item .accordion-item-title > button {
+  align-items: center;
+  color: var(--off-text);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: space-between;
+  letter-spacing: 0;
+  line-height: 18px;
+  min-height: 0;
+  outline: none;
+  padding: 17px;
+  text-transform: uppercase;
+}
+
+.offtrail-photo-filter .accordion-item:not([data-expanded]) .accordion-item-title > button {
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.offtrail-photo-filter .accordion-item-title > button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.offtrail-photo-filter .accordion-item-title > button:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--off-orange);
+  outline: none;
+}
+
+/* SDS accordion adds a global-color outer ring via ::before — not in Figma collapsed row */
+.offtrail-photo-filter
+  .accordion-item:has(.accordion-item-title > button[data-focus-visible])::before {
+  content: none !important;
+  display: none !important;
+}
+
+.offtrail-photo-filter .accordion-item-indicator svg {
+  display: none;
+}
+
+.offtrail-photo-filter .accordion-item-indicator {
+  background-image: var(--off-chevron-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  flex-shrink: 0;
+  height: 12px;
+  width: 12px;
+}
+
+/* Panel chrome only when open — border + padding here made collapsed rows look “half open” */
+.offtrail-photo-filter .accordion-item:not([data-expanded]) > .accordion-item-content {
+  border: none;
+  flex: 0 0 0;
+  margin: 0;
+  max-height: 0 !important;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.offtrail-photo-filter__canvas {
+  align-items: stretch;
+  background: var(--off-canvas);
+  border: 1px solid var(--off-canvas-border);
+  border-radius: var(--off-radius);
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+}
+
+.offtrail-photo-filter__canvas-inner {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  max-width: 100%;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+.offtrail-photo-filter__clear {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 2;
+}
+
+/* Canvas Clear — Figma 598:316 */
+.offtrail-photo-filter__clear .offtrail-photo-filter__clear-button.button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  box-shadow: none;
+  color: #fff;
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 18px;
+  padding: 9px 13px;
+  text-transform: uppercase;
+}
+
+.offtrail-photo-filter__clear
+  .offtrail-photo-filter__clear-button.button[data-hovered]:not([data-disabled]) {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.offtrail-photo-filter__clear
+  .offtrail-photo-filter__clear-button.button[data-focus-visible]::before {
+  box-shadow: 0 0 0 2px var(--off-orange);
+}
+
+/* Match sidebar Reset — same surface, height, and width cap as rail (285px) */
+.offtrail-photo-filter__dropzone {
+  align-items: center;
+  background: var(--off-preset-inactive-bg);
+  border: none;
+  border-radius: var(--off-radius);
+  box-sizing: border-box;
+  color: var(--off-text);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: 18px;
+  margin-inline: auto;
+  max-width: 285px;
+  padding: 12px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.offtrail-photo-filter__dropzone:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.offtrail-photo-filter__dropzone:focus-visible {
+  outline: 2px solid var(--off-orange);
+  outline-offset: 2px;
+}
+
+.offtrail-photo-filter__title-display {
+  color: #fff;
+  font-family: var(--off-display-font);
+  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-variation-settings: "SCAN" 67, "BLED" 0;
+  white-space: nowrap;
+}
+
+.offtrail-photo-filter__subtitle {
+  color: var(--off-subtle);
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.offtrail-photo-filter__preview-wrap {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 0;
+  padding: 24px;
+  width: 100%;
+}
+
+.offtrail-photo-filter__preview {
+  border-radius: 4px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.offtrail-photo-filter__preview-stack {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.offtrail-photo-filter__blend {
+  inset: 0;
+  mix-blend-mode: color;
+  opacity: 0.55;
+  pointer-events: none;
+  position: absolute;
+}
+
+.offtrail-photo-filter__sidebar {
+  display: flex;
+  flex: 0 0 var(--off-sidebar-width);
+  flex-direction: column;
+  gap: 24px;
+  max-width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  width: var(--off-sidebar-width);
+}
+
+.offtrail-photo-filter__sidebar-brand {
+  flex: 0 0 auto;
+  height: 40px;
+  width: 100%;
+}
+
+.offtrail-photo-filter__logo-img {
+  display: block;
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.offtrail-photo-filter__presets {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: var(--off-preset-gap);
+  width: 100%;
+}
+
+.offtrail-photo-filter__preset {
+  align-items: flex-start;
+  background: var(--off-preset-inactive-bg);
+  border: none;
+  border-radius: var(--off-radius);
+  color: var(--off-muted);
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 var(--off-preset-size);
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  height: var(--off-preset-size);
+  line-height: 18px;
+  padding: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+  width: var(--off-preset-size);
+}
+
+.offtrail-photo-filter__preset.is-active {
+  background: var(--off-orange);
+  color: var(--off-orange-text);
+}
+
+.offtrail-photo-filter__preset:focus-visible {
+  outline: 2px solid var(--off-orange);
+  outline-offset: 2px;
+}
+
+.offtrail-photo-filter__sidebar-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.offtrail-photo-filter__accordion.accordion {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.offtrail-photo-filter__sidebar-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.offtrail-photo-filter__levels-row {
+  margin-bottom: 10px;
+}
+
+.offtrail-photo-filter__levels-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Primitive uses `.label`, not `.field-label` (previous selector never matched) */
+.offtrail-photo-filter__levels-row .label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+/* Output Levels — Figma 598:281 (2px track, 24px stack, rgba labels) */
+.offtrail-photo-filter__output-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.offtrail-photo-filter__output-row {
+  width: 100%;
+}
+
+.offtrail-photo-filter__output-row .field {
+  --field-label-color: rgba(255, 255, 255, 0.6);
+  --field-row-gap: 8px;
+}
+
+.offtrail-photo-filter__output-row .label,
+.offtrail-photo-filter__output-row .slider-output {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.offtrail-photo-filter__output-row .slider-output {
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+}
+
+.offtrail-photo-filter__output-row .slider {
+  height: 2px;
+}
+
+.offtrail-photo-filter__output-row .slider::before {
+  background: linear-gradient(
+    90deg,
+    var(--off-orange) 0,
+    var(--off-orange) var(--off-output-fill, 0%),
+    rgba(255, 255, 255, 0.18) var(--off-output-fill, 0%),
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.offtrail-photo-filter__output-row .slider-thumb {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  forced-color-adjust: none;
+  height: 12px;
+  width: 12px;
+}
+
+.offtrail-photo-filter__gradient-bar {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  height: 24px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.offtrail-photo-filter__gradient-bar-fill {
+  height: 100%;
+  width: 100%;
+}
+
+.offtrail-photo-filter__gradient-markers {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.offtrail-photo-filter__gradient-marker {
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+}
+
+.offtrail-photo-filter__step {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 28px 1fr auto;
+  grid-template-rows: auto auto;
+  padding: 10px 0;
+}
+
+.offtrail-photo-filter__step:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.offtrail-photo-filter__swatch {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  grid-row: 1 / span 2;
+  height: 28px;
+  width: 28px;
+}
+
+.offtrail-photo-filter__step-label {
+  color: var(--off-muted);
+  font-family: var(--off-ui-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.offtrail-photo-filter__step-meta {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.offtrail-photo-filter__hex {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: var(--off-text);
+  font-family: var(--off-ui-font);
+  font-size: 12px;
+  padding: 4px 6px;
+  width: 84px;
+}
+
+.offtrail-photo-filter__hex:focus-visible {
+  outline: 2px solid var(--off-orange);
+  outline-offset: 1px;
+}
+
+.offtrail-photo-filter__remove {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--off-muted);
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 1;
+  padding: 4px;
+}
+
+.offtrail-photo-filter__remove:hover {
+  color: var(--off-text);
+}
+
+.offtrail-photo-filter__remove:focus-visible {
+  outline: 2px solid var(--off-orange);
+  outline-offset: 2px;
+}
+
+.offtrail-photo-filter__add-step {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: var(--off-radius);
+  color: var(--off-muted);
+  cursor: pointer;
+  font-family: var(--off-ui-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  padding: 10px 12px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.offtrail-photo-filter__add-step:hover {
+  border-color: var(--off-orange);
+  color: var(--off-text);
+}
+
+.offtrail-photo-filter__btn-reset {
+  background: var(--off-preset-inactive-bg);
+  border: none;
+  border-radius: var(--off-radius);
+  color: var(--off-text);
+  cursor: pointer;
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  height: 42px;
+  letter-spacing: 0.02em;
+  line-height: 18px;
+  padding: 12px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.offtrail-photo-filter__btn-reset:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.offtrail-photo-filter__btn-reset:focus-visible {
+  outline: 2px solid var(--off-orange);
+  outline-offset: 2px;
+}
+
+.offtrail-photo-filter__btn-download {
+  background: var(--off-orange);
+  border: none;
+  border-radius: var(--off-radius);
+  color: var(--off-orange-text);
+  cursor: pointer;
+  font-family: var(--off-ui-font);
+  font-size: 14px;
+  font-weight: 500;
+  height: 42px;
+  line-height: 18px;
+  padding: 12px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.offtrail-photo-filter__btn-download:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.offtrail-photo-filter__btn-download:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.offtrail-photo-filter__btn-download:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.offtrail-photo-filter__btn-download:disabled:hover {
+  filter: none;
+}
+
+.offtrail-photo-filter__help {
+  bottom: 18px;
+  position: fixed;
+  right: 18px;
+  z-index: 10;
+}
+
+.offtrail-photo-filter__help button {
+  align-items: center;
+  background: var(--off-preset-inactive-bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: var(--off-text);
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+
+.offtrail-photo-filter__help button:hover {
+  border-color: var(--off-orange);
+}
+
+/* Undo SDS accordion expanded chrome inside the dark sidebar */
+.offtrail-photo-filter .accordion-item[data-expanded] {
+  background: var(--off-bg);
+}
+
+.offtrail-photo-filter
+  .accordion-item[data-expanded]:has(.accordion-item-title > button[data-hovered]) {
+  background: #140a1f;
+}
+
+.offtrail-photo-filter
+  .accordion-item[data-expanded]
+  > .accordion-item-title
+  > button {
+  padding-bottom: 17px;
+}
+
+.offtrail-photo-filter .accordion-item[data-expanded] > .accordion-item-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 17px 12px;
+  width: 100%;
+}
