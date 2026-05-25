@@ -602,15 +602,19 @@
 }
 
 .offtrail-photo-filter__add-step {
-  background: transparent;
-  border: 1px dashed rgba(255, 255, 255, 0.25);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
   border-radius: var(--off-radius);
-  color: var(--off-muted);
+  color: var(--off-text);
   cursor: pointer;
+  display: flex;
   font-family: var(--off-ui-font);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  gap: 4px;
+  justify-content: center;
+  line-height: 18px;
   margin-top: 4px;
   padding: 10px 12px;
   text-transform: uppercase;
@@ -618,7 +622,7 @@
 }
 
 .offtrail-photo-filter__add-step:hover {
-  border-color: var(--off-orange);
+  background: rgba(255, 255, 255, 0.14);
   color: var(--off-text);
 }
 
